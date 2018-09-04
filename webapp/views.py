@@ -6,27 +6,7 @@ import github
 import sqlite3
 import pandas as pd
 import datetime
-'''{% for d in l %}
-            <tr>
-            {% for dd in d %}
-            <td>{{d}}</td>
-            {% endfor %}
-            </tr>
-            {% endfor %}
-
-create a form - search user name
-get the user name
-call the api.username
-get the details of username
-call another api.username for check email
-if username is in file then check the details are same if not, update
-store in a file
-
-admin
-create a form for email and date as radio button
-create a form for text - email or date
-display all users
-if search is called display only that users
+'''
 
 This is the Problem related to Github API usage which you can find on https://developer.github.com/v3/
 
