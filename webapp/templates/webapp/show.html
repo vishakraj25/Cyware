@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Forms Tutorial</title>
+
+</head>
+<body>
+    Result : <strong>{{ result }}</strong>
+    Error : <strong>{{ error }}</strong>
+<h2>Django Forms Tutorial</h2>
+    <table border="1">
+        {% for d in title %}
+            <td>{{d}}</td>
+            {% endfor %}
+
+        {% for d in l %}
+            <tr>
+            {% for dd in d %}
+            <td>{{dd}}</td>
+            {% endfor %}
+            </tr>
+            {% endfor %}
+
+    </table>
+</form>
+</body>
+</html>
