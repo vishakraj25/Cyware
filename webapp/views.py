@@ -86,20 +86,11 @@ def show(request):
                   if d==None:
                       d='nnone'
 
-              fil=open('/home/vishakraj25/project/webapp/t.txt','a')
-              fil.write(str(data))
-              fil.close()
+         
               result,error=base(data)
 
               l.append(data)
-              fil=open('/home/vishakraj25/project/webapp/t.txt','a')
-              fil.write('l data')
-              fil.close()
-
-              fil=open('/home/vishakraj25/project/webapp/t.txt','a')
-              fil.write('passed data')
-              fil.close()
-
+    
         #adding the values in a context variable
         title=['login', 'idd',  'avatar_url', 'gravatar_id', 'url', 'html_url', 'followers_url', 'following_url', 'gists_url', 'starred_url', 'subscriptions_url', 'organizations_url', 'repos_url', 'events_url', 'received_events_url','type','site_admin', 'name', 'company', 'blog', 'location', 'email', 'hireable', 'bio', 'public_repos', 'public_gists', 'followers', 'following', 'created_at', 'updated_at', 'date']
 
@@ -126,11 +117,7 @@ def base( data):
     try:
         cur=connection.cursor()
         if cur.execute('INSERT OR REPLACE INTO webapp_information(login, idd, avatar_url, gravatar_id, url, html_url, followers_url, following_url, gists_url, starred_url, subscriptions_url, organizations_url, repos_url, events_url, received_events_url,typ,site_admin, name, company, blog, location, email, hireable, bio, public_repos, public_gists, followers, following, created_at, updated_at, dat) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',data):
-            fil=open('/home/vishakraj25/project/webapp/t.txt','a')
-            fil.write('INSERT')
-            fil.close()
-
-
+     
         connection.connection.commit()
         result='Good'
         error='None'
@@ -142,23 +129,16 @@ def base( data):
             transaction.rollback()
             result='rollback'
             error='None'
-            fil=open('/home/vishakraj25/project/webapp/t.txt','a')
-            fil.write('ERROR IF')
-            fil.close()
+           
         else:
             error='None'
-            fil=open('/home/vishakraj25/project/webapp/t.txt','a')
-            fil.write('ERROR ELSE')
-            fil.close()
             result='rollback'
     finally:
         if connection:
             connection.close()
             result='finally'
             error='None'
-        fil=open('/home/vishakraj25/project/webapp/t.txt','a')
-        fil.write('open final')
-        fil.close()
+
     return(result,error)
 
 def sp():
